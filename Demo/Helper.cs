@@ -37,13 +37,24 @@ namespace Demo
 
         #region Generics
 
-        public static void Swap<T>(ref T a, ref T b)
+        public static void Swap(ref T a, ref T b)
         {
             T temp = a;
             a = b;
             b = temp;
         }
 
+        public static int SearchArray(T[] arr, T key)
+        {
+            if(arr is not null) {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i].Equals(key))
+                        return i;
+                }
+            }
+            return -1;
+        }
 
         #endregion
 
