@@ -60,8 +60,16 @@ namespace Demo
             //else
             //    Console.WriteLine($"Key {key} not found");
 
-            //Employee E01 = new Employee { Id = 1011, Name = "John", Salary = 10000 };
+            //Employee E01 = new Employee { Id = 102, Name = "John", Salary = 10000 };
             //Employee E02 = new Employee { Id = 102, Name = "Smith", Salary = 20000 };
+
+            //Console.WriteLine(E01 == E02); // reference comparison
+
+            //Console.WriteLine(E01.Equals(E02)); // data comparison with struct type
+
+            //Console.WriteLine(E01.GetHashCode());
+            //Console.WriteLine(E02.GetHashCode());
+
 
             //Employee E03 = new Employee { Id = 101, Name = "John", Salary = 10000 };
             //if (E01 == E02)
@@ -80,6 +88,9 @@ namespace Demo
             //    Console.WriteLine($"Employee found at index {index}");
             //else
             //    Console.WriteLine("Employee not found");
+
+            //int x = 10;
+            //Console.WriteLine(x.GetHashCode());
             #endregion
         }
     }
