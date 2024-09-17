@@ -47,7 +47,7 @@ namespace Demo
 
             #endregion
 
-            #region Generics [Search Example]
+            #region Generics [Search Example] & equality & hashcode
 
             //int[] arr = { 10, 20, 30, 40, 50 };
 
@@ -91,6 +91,64 @@ namespace Demo
 
             //int x = 10;
             //Console.WriteLine(x.GetHashCode());
+            #endregion
+
+            #region Generics [Sorting example][Equality]
+            //int[] Numbers = { 2, 5, 1, 9, 2, 3, 6, 7, 8 };
+
+            //foreach (int n in Numbers)
+            //    Console.Write($"{n} ");
+
+            //Helper<int>.BubbleSort(Numbers);
+
+            //Console.WriteLine("\nAfter Sorting");
+            //foreach(int n in Numbers)
+            //    Console.Write($"{n} ");
+
+            //string[] Names = { "John", "Smith", "Peter", "David", "Alice" };
+
+            //foreach (string n in Names)
+            //    Console.Write($"{n} ");
+
+            //Helper<string>.BubbleSort(Names);
+
+            //Console.WriteLine("\nAfter Sorting");
+
+            //foreach (string n in Names)
+            //    Console.Write($"{n} ");
+
+            //Employee[] employees = {
+            //    new Employee { Id = 1011, Name = "John", Salary = 10000 },
+            //    new Employee { Id = 102, Name = "Smith", Salary = 20000 },
+            //    new Employee { Id = 103, Name = "Peter", Salary = 15000 },
+            //    new Employee { Id = 104, Name = "David", Salary = 12000 },
+            //    new Employee { Id = 105, Name = "Alice", Salary = 18000 }
+            //};
+
+            //foreach (Employee e in employees)
+            //    Console.WriteLine(e);
+
+            //Helper<Employee>.BubbleSort(employees);
+
+            //Console.WriteLine("\nAfter Sorting");
+
+            //foreach (Employee e in employees)
+            //    Console.WriteLine(e);
+
+            Point[] points = {
+                new Point(10, 20),
+                new Point(5, 15),
+                new Point(30, 40),
+                new Point(20, 10),
+                new Point(15, 5)
+            };
+
+            foreach (Point p in points)
+                Console.WriteLine(p);
+
+            Helper<Point>.BubbleSort(points);
+
+            Console.WriteLine("\nAfter Sorting");
             #endregion
         }
     }

@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    internal class Helper<T>
+    internal class Helper<T> where T : IComparable<T>
     {
+
+        // T must be class or struct that implments the IComparable interface
+        // IComparable interface has CompareTo method that returns int
         // In case generic type <T> is declared on method level not class Or Struct Or Interface
         // Compiler can detect the type of T based of Passed Parameters
-        
+
         #region non Generic
         //public static void Swap(ref int a, ref int b)
         //{
@@ -33,6 +36,23 @@ namespace Demo
         //    a = b;
         //    b = temp;
         //} 
+
+        //public static void BubbleSort(int[] arr)
+        //{
+        //    if (arr is not null)
+        //    {
+        //        for (int i = 0; i < arr.Length - 1; i++)
+        //        {
+        //            for (int j = 0; j < arr.Length - i - 1; j++)
+        //            {
+        //                if (arr[j] > arr[j + 1])
+        //                {
+        //                    Helper.Swap(ref arr[j], ref arr[j + 1]);
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
         #endregion
 
         #region Generics
@@ -54,6 +74,22 @@ namespace Demo
                 }
             }
             return -1;
+        }
+
+        public static void BubbleSort(T[] arr)
+        {
+            if (arr is not null)
+            {
+                for (int i = 0; i < arr.Length - 1; i++)
+                {
+                    for (int j = 0; j < arr.Length - i - 1; j++)
+                    {
+                        if (arr[j].CompareTo(arr[j + 1]) == 1)
+
+                            Swap(ref arr[j], ref arr[j + 1]);
+                    }
+                }
+            }
         }
 
         #endregion
