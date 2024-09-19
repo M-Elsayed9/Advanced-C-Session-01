@@ -1,13 +1,15 @@
 ﻿using Demo.Generics;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Demo
 {
-    internal class Helper<T> where T : IComparable<T>
+    internal class Helper<T> where T : notnull, IComparable<T>
     {
 
         // T must be class or struct that implments the IComparable interface
@@ -76,7 +78,7 @@ namespace Demo
             return -1;
         }
 
-        public static void BubbleSort(T[] arr)
+        public static void BubbleSort<T1>(T1[] arr) where T1 : IComparable<T1>
         {
             if (arr is not null)
             {
@@ -86,12 +88,19 @@ namespace Demo
                     {
                         if (arr[j].CompareTo(arr[j + 1]) == 1)
 
-                            Swap(ref arr[j], ref arr[j + 1]);
+                            Helper<T1>.Swap(ref arr[j], ref arr[j + 1]);
                     }
                 }
             }
         }
 
+        public static T Sum(T a, T b)
+        {
+            // return a + b; // Error: Operator '+' cannot be applied to operands of type 'T' and 'T'
+            dynamic x = a;
+            dynamic y = b;
+            return x + y;
+        }
         #endregion
 
     }
