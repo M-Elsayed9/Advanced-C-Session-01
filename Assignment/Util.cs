@@ -34,17 +34,14 @@ namespace Assignment
         public static void ReverseArrayList(ArrayList arrayList)
         {
             if (arrayList == null || arrayList.Count == 0)
-                throw new ArgumentException("ArrayList is null or empty.");
+                return;
 
             int start = 0;
             int end = arrayList.Count - 1;
 
             while (start < end)
             {
-                object? temp = arrayList[start];
-                arrayList[start] = arrayList[end];
-                arrayList[end] = temp;
-
+                (arrayList[end], arrayList[start]) = (arrayList[start], arrayList[end]); // Swapping elements using tuple
                 start++;
                 end--;
             }

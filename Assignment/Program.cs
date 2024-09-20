@@ -97,27 +97,43 @@ namespace Assignment
             //takes the ArrayList as input and modifies it to have
             //the reversed order of elements.
 
-            ArrayList arrayList = new ArrayList { 1, 2, 3, 4, 5 };
-            Console.WriteLine("Before Reverse:");
-            foreach (var item in arrayList)
-            {
-                Console.Write(item + " ");
-            }
+            //ArrayList arrayList = new ArrayList { 1, 2, 3, 4, 5 };
+            //Console.WriteLine("Before Reverse:");
+            //foreach (var item in arrayList)
+            //{
+            //    Console.Write(item + " ");
+            //}
 
-            Util<int>.ReverseArrayList(arrayList);
+            //Util<int>.ReverseArrayList(arrayList);
 
-            Console.WriteLine("\nAfter Reverse:");
-            foreach (var item in arrayList)
-            {
-                Console.Write(item + " ");
-            }
-
-
-
+            //Console.WriteLine("\nAfter Reverse:");
+            //foreach (var item in arrayList)
+            //{
+            //    Console.Write(item + " ");
+            //}
             #endregion
 
             #region Question 04
-            //4.You are given a list of integers.Your task is to find and return a new list containing only the even numbers from the given list.
+            //4.You are given a list of integers.Your task is to
+            //find and return a new list containing only the even
+            //numbers from the given list.
+
+            //List<int> list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            //List<int> newList = new List<int>();
+
+            //foreach (int num in list)
+            //{
+            //    if (num % 2 == 0)
+            //    {
+            //        newList.Add(num);
+            //    }
+            //}
+
+            //foreach (int num in newList)
+            //{
+            //    Console.WriteLine(num);
+            //}
 
             #endregion
 
@@ -140,6 +156,23 @@ namespace Assignment
             //at a specific index in the list but throws an
             //exception for invalid indices.
 
+            FixedSizeList<int> fixedSizeList = new FixedSizeList<int>(5);
+            fixedSizeList.Add(5);
+            fixedSizeList.Add(10);
+            fixedSizeList.Add(15);
+            fixedSizeList.Add(20);
+            fixedSizeList.Add(25);
+
+            // Try to add more elements than the capacity
+            fixedSizeList.Add(30); // InvalidOperationException: The list is full Cannot add more elements.
+
+            FixedSizeList<string> fixedSizeList2 = new FixedSizeList<string>(3);
+            fixedSizeList2.Add("A");
+            fixedSizeList2.Add("B");
+            fixedSizeList2.Add("C");
+            fixedSizeList2.Add("D");
+            fixedSizeList2.Add("E");
+            fixedSizeList2.Add("F"); // InvalidOperationException: The list is full Cannot add more elements.
             #endregion
 
             #region Question 06
