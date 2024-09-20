@@ -156,23 +156,23 @@ namespace Assignment
             //at a specific index in the list but throws an
             //exception for invalid indices.
 
-            FixedSizeList<int> fixedSizeList = new FixedSizeList<int>(5);
-            fixedSizeList.Add(5);
-            fixedSizeList.Add(10);
-            fixedSizeList.Add(15);
-            fixedSizeList.Add(20);
-            fixedSizeList.Add(25);
+            //FixedSizeList<int> fixedSizeList = new FixedSizeList<int>(5);
+            //fixedSizeList.Add(5);
+            //fixedSizeList.Add(10);
+            //fixedSizeList.Add(15);
+            //fixedSizeList.Add(20);
+            //fixedSizeList.Add(25);
 
-            // Try to add more elements than the capacity
-            fixedSizeList.Add(30); // InvalidOperationException: The list is full Cannot add more elements.
+            //// Try to add more elements than the capacity
+            //fixedSizeList.Add(30); // InvalidOperationException: The list is full Cannot add more elements.
 
-            FixedSizeList<string> fixedSizeList2 = new FixedSizeList<string>(3);
-            fixedSizeList2.Add("A");
-            fixedSizeList2.Add("B");
-            fixedSizeList2.Add("C");
-            fixedSizeList2.Add("D");
-            fixedSizeList2.Add("E");
-            fixedSizeList2.Add("F"); // InvalidOperationException: The list is full Cannot add more elements.
+            //FixedSizeList<string> fixedSizeList2 = new FixedSizeList<string>(3);
+            //fixedSizeList2.Add("A");
+            //fixedSizeList2.Add("B");
+            //fixedSizeList2.Add("C");
+            //fixedSizeList2.Add("D");
+            //fixedSizeList2.Add("E");
+            //fixedSizeList2.Add("F"); // InvalidOperationException: The list is full Cannot add more elements.
             #endregion
 
             #region Question 06
@@ -180,6 +180,11 @@ namespace Assignment
             //character in it and return its index.If there is no
             //such character, return -1.Hint you can use dictionary
 
+            string str = "11262334455";
+
+            int index = Util<string>.FindFirstNonRepeatedCharacterIndex(str);
+
+            Console.WriteLine(index); 
             #endregion
 
         }

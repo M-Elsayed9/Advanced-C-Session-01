@@ -46,5 +46,31 @@ namespace Assignment
                 end--;
             }
         }
+
+        public static int FindFirstNonRepeatedCharacterIndex(string str)
+        {
+            Dictionary<char, int> charCount = new Dictionary<char, int>();
+
+            foreach (char c in str)
+            {
+                if (charCount.ContainsKey(c))
+                {
+                    charCount[c]++;
+                }
+                else
+                {
+                    charCount[c] = 1;
+                }
+            }
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (charCount[str[i]] == 1)
+                {
+                    return i; 
+                }
+            }
+            return -1; 
+        }
     }
 }
