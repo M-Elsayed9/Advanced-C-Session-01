@@ -8,28 +8,8 @@ namespace Assignment
 {
     internal class Program
     {
-        public static void BubbleSort<T>(T[] arr) where T : IComparable<T>
-        {
-            int n = arr.Length;
-            bool swapped;
-            for (int i = 0; i < n - 1; i++)
-            {
-                swapped = false;
-                for (int j = 0; j < n - i - 1; j++)
-                {
-                    if (arr[j].CompareTo(arr[j + 1]) > 0)
-                    {
-                        T temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
-                        swapped = true;
-                    }
-                }
-                if (!swapped)
-                    break;
-            }
-        }
         static void Main(string[] args)
+
         {
             //            Assignment
 
@@ -47,22 +27,22 @@ namespace Assignment
             //from O(n^2) to O(n) in the best-case scenario when the array is already sorted.
             //The optimised Bubble Sort algorithm is implemented as follows:
 
-            int[] arr = { 64, 34, 25, 12, 22, 11, 90 };
-            int n = arr.Length;
+            //int[] arr = { 64, 34, 25, 12, 22, 11, 90 };
+            //int n = arr.Length;
 
-            Console.WriteLine("Original array: ");
-            foreach (int item in arr)
-            {
-                Console.Write(item + " ");
-            }
+            //Console.WriteLine("Original array: ");
+            //foreach (int item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
 
-            BubbleSort(arr);
+            //Util<int>.BubbleSort(arr);
 
-            Console.WriteLine("Sorted array: ");
-            foreach (int item in arr)
-            {
-                Console.Write(item + " ");
-            }
+            //Console.WriteLine("Sorted array: ");
+            //foreach (int item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
             #endregion
 
             #region Question 02
@@ -91,6 +71,22 @@ namespace Assignment
             //5. Note: You can assume that the type T used in the
             //Range<T> class implements the IComparable<T> interface to allow for comparisons.
 
+            //Range<int> range = new Range<int>(10, 20);
+
+            //Console.WriteLine(range.IsInRange(15)); // True
+
+            //Console.WriteLine(range.Length()); // 10
+
+            //Range<double> range2 = new Range<double>(10.5, 20.5);
+
+            //Console.WriteLine(range2.IsInRange(15.5)); // True
+
+            //Console.WriteLine(range2.Length()); // 10.0
+
+            //Range<string> range3 = new Range<string>("A", "B");
+
+            //Console.WriteLine(range3.IsInRange("C")); // False
+
             #endregion
 
             #region Question 03
@@ -100,6 +96,23 @@ namespace Assignment
             //using the built-in Reverse.Implement a function that
             //takes the ArrayList as input and modifies it to have
             //the reversed order of elements.
+
+            ArrayList arrayList = new ArrayList { 1, 2, 3, 4, 5 };
+            Console.WriteLine("Before Reverse:");
+            foreach (var item in arrayList)
+            {
+                Console.Write(item + " ");
+            }
+
+            Util<int>.ReverseArrayList(arrayList);
+
+            Console.WriteLine("\nAfter Reverse:");
+            foreach (var item in arrayList)
+            {
+                Console.Write(item + " ");
+            }
+
+
 
             #endregion
 
